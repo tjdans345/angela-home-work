@@ -1,0 +1,6 @@
+.list-area{display: flex; }
+.list-area .list{ padding-top: 10px;width:50%;}
+.itemList-name > h2{font-size:14px;}
+.itemList-price > h2{font-size:14px;}
+.classification{display: flex; background-color: aqua; width:100%;}
+.classification .classdo{width:50%; margin: 20px auto; padding-right: 30px;}

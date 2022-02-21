@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문을 이용한 배열 </title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <div>
+        <label for="">상품이름<input type="text" id="itemName" class="itemInput" required></label>
+        <label for="">상품가격<input type="text"  id="itemPrice" class="itemInput" required></label>
+        <button type="button" onclick="register()">등록</button>
+    
+    </div>
+ 
+   
+    
+    <div class="container"> 
+
+    
+    <h4>사용자가 입력한 전체 상품</h4>
+    <div class="list-area">
+        
+        <div class="itemList-name list">
+            <h2 class="">상품명</h2>
+            <ul id="listName">
+
+            </ul>
+        </div>
+    
+        
+        <div class="itemList-price list">
+            <h2>상품가격</h2>
+            <ul id="listPrice">
+                
+            </ul>
+         
+</div>
+    </div>
+
+
+
+
+    <!-- 고가상품 저가상품 -->
+    <div class="classification">
+
+    
+        <div class="highPrice classdo">
+            <h2>고가상품</h2>
+            <div id="highItem">
+            
+            </div>
+        </div>
+        <!-- 고가상품 -->
+
+        <div class="lowPrice classdo">
+            <h2>저가상품</h2>
+            <div id="lowItem">
+                <!--여기에 분류되는게 들어가야됨 -->
+            </div>
+        </div>
+        <!-- 저가상품 -->
+        
+    </div>
+
+
+</body>
+</html>
