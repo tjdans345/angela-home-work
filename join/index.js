@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+const joinArray = [];
 // 순서도 정하기
 // 개별값 확인 유효성
 // 빈값일 경우 포커스 사용해서 입력하게 만들기
@@ -8,17 +11,16 @@
 
 
 
-
 //함수 시작
 
 function check_reg() {
 	console.log("버튼1을 누르셨습니다.");
-
 	let nameCheck = document.getElementById('name').value;
 	let nickCheck = document.getElementById('nickname').value;
 	let idCheck = document.getElementById('id').value; 
 	let pwCheck = document.getElementById('pw').value; 
 	let emailCheck = document.getElementById('email').value; 
+	let reg_input = document.querySelectorAll('.reg_input').value;
 	
 //정규식 선언
 
@@ -59,8 +61,23 @@ if( !nameJ.test(nameCheck) || nameCheck === '' || nameCheck.trim() === ''){
 	document.getElementById('email').focus();
 	return;
 }else{
+	const li1 = document.createElement('li');
+     document.querySelectorAll('.reg_input').appendChild(li1).innerText = name;
+
 	alert('회원가입이 완료되었습니다.');
 }
+
+
+//배열 푸시
+joinArray.push({
+	joininfo : reg_input
+});
+
+
+console.log(reg_input);
+
+
+
 
 
 }
