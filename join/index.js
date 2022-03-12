@@ -1,8 +1,6 @@
 "use strict";
 
 
-
-const joinArray = [];
 // 순서도 정하기
 // 개별값 확인 유효성
 // 빈값일 경우 포커스 사용해서 입력하게 만들기
@@ -10,11 +8,14 @@ const joinArray = [];
 // 조건이 맞다면 조건이 맞는 창 띄우기
 
 // 회원 객체 배열
-let users = [];
+const users = [];
+const regInput = document.querySelectorAll('.reg_input').value;
+	
+
 
 //함수 시작
 
-function check_reg() {
+const check_reg = function check_reg() {
 
 	console.log("버튼1을 누르셨습니다.");
 	let nameCheck = document.getElementById('name').value;
@@ -22,11 +23,9 @@ function check_reg() {
 	let idCheck = document.getElementById('id').value; 
 	let pwCheck = document.getElementById('pw').value; 
 	let emailCheck = document.getElementById('email').value; 
-	let reg_input = document.querySelectorAll('.reg_input').value;
-	
+
+
 //정규식 선언
-
-
 
 //모든 공백 체크 정규식
 let regExp = /\s/g;
@@ -65,26 +64,33 @@ if( !nameJ.test(nameCheck) || nameCheck.trim() === ''){
 	document.getElementById('email').focus();
 	return;
 }else{
-	const li1 = document.createElement('li');
-     document.querySelectorAll('.reg_input').appendChild(li1).innerText = name;
+	// const li1 = document.createElement('li');
+  //    document.querySelectorAll('input.reg_input').appendChild(li1).innerText = name;
 
 	alert('회원가입이 완료되었습니다.');
   // 여기에 회원 정보 객체를 배열에 계속 저장해주세요. 그 후 가입된 회원 총수를 화면에 출력해주세요 ex : 지금 까지 총 00명의 회원이 가입했어요!
 }
 
+//정규식 끝
 
-//배열 푸시
-joinArray.push({
-	joininfo : reg_input
+
+  //회원가입 완료된 후 배열에 추가하기
+users.push({
+
 });
 
 
-console.log(reg_input);
+
+console.log(`${regInput}`);
 
 
-  
+
 }
 // 함수끝
+
+
+
+
 
 //버튼 클릭했을 경우 "회원가입이 완료되었습니다." 창 띄우기
 

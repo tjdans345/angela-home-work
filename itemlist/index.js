@@ -5,7 +5,6 @@ const itemList = document.querySelectorAll('.itemList');
 
 // 함수시작
 const register = function register(){
-
 const name = document.getElementById('itemName').value;
 const price = document.getElementById('itemPrice').value;
 
@@ -33,7 +32,7 @@ const price = document.getElementById('itemPrice').value;
   }else{
      const li1 = document.createElement('li');
      document.getElementById('listName').appendChild(li1).innerText = name;
-    
+   
      const li2 = document.createElement('li');
      document.getElementById('listPrice').appendChild(li2).innerText = price;
      alert('상품 등록이 완료되었습니다.')
