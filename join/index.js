@@ -9,6 +9,9 @@
 // 회원 객체 배열
 const users = []; // users라는 변수를 const 키워드를 사용해서 선언해주었고 빈 배열을 값을 할당(초기화, 값을 대입)해줬다
 
+const userTearch =[];
+const userGeneral = [];
+
 //함수 시작
 const check_reg = function check_reg() {
   // 변수명은 항상 직관적이게 그리고 그 변수가 가지는 목적에 맞게
@@ -18,6 +21,8 @@ const check_reg = function check_reg() {
   let userId = document.getElementById("id").value;
   let userPw = document.getElementById("pw").value;
   let userEmail = document.getElementById("email").value;
+  let userCategory = document.getElementById("category").value;
+  
 
   //정규식 선언
 
@@ -37,13 +42,14 @@ const check_reg = function check_reg() {
   let emailReg =
     /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
+
   //name 이 왜 줄이 생기는지
   if (!nameReg.test(userName) || userName.trim() === "") {
     alert("형식에 맞춰 이름을 입력하세요!");
     document.getElementById("name").focus();
     document.getElementById("name").value = "";
     return false;
-  } else if (!nickNameReg.test(userNickname) || userNickname.trim() === "") {
+   } else if (!nickNameReg.test(userNickname) || userNickname.trim() === "") {
     alert("형식에 맞춰 닉네임을 입력하세요!");
     document.getElementById("nickname").focus();
     document.getElementById("nickname").value = "";
@@ -63,33 +69,32 @@ const check_reg = function check_reg() {
     document.getElementById("email").focus();
     // 여기 추가해주세요 (잘못입력하면 해당 인풋 박스를 빈칸으로 만들어주기)
     return false;
+  }else if(userCategory.trim() === ""){
+    alert('유형을 선택해주세요.');
+    console.log('ddd')
+    return false;
   }
-  // const li1 = document.createElement('li');
-  //    document.querySelectorAll('input.reg_input').appendChild(li1).innerText = name;
-  //정규식 끝
+  
 
   alert("회원가입이 완료되었습니다.");
-  // 여기에 회원 정보 객체를 배열에 계속 저장해주세요. 그 후 가입된 회원 총수를 화면에 출력해주세요 ex : 지금 까지 총 00명의 회원이 가입했어요!
-  // 회원가입 완료된 후 배열에 추가하기
-  // 객체 저장 방법1.
-  //   users.push({
-  //     // key   :  value
-  //     userName: userName,
-  //     userNickname: userNickname,
-  //     userId: userId,
-  //     userPw: userPw,
-  //     userEmail: userEmail,
-  //   });
 
-  function User(name, nickname, id, pw, email) {
+
+  
+
+  //회원가입 끝!
+
+
+
+  function User(name, nickname, id, pw, email, category) {
     this.name = name;
     this.nickname = nickname;
     this.id = id;
     this.pw = pw;
     this.email = email;
+    this.categoly = category;
   }
 
-  const newUser = new User(userName, userNickname, userId, userPw, userEmail);
+  const newUser = new User(userName, userNickname, userId, userPw, userEmail, userCategory );
   users.push({
     newUser,
   });
@@ -100,7 +105,29 @@ const check_reg = function check_reg() {
   document.getElementById("id").value = "";
   document.getElementById("pw").value = "";
   document.getElementById("email").value = "";
+  document.getElementById('category').value= "";
 };
+
+
+//유형에 따른 분류하기
+// const arrCategory = [tearch, general];
+// const arrTearch =[];
+// const arrGeneral = [];
+
+
+if (userCategory.value === teacher) {
+  userTearch.push()
+  console.log(userTearch);
+  //userCategory
+ } else if (userTearch[1] !== general) {
+  userGeneral.push()
+  console.log(userGeneral);
+
+} 
+
+
+
+
 // 함수끝
 
 //버튼 클릭했을 경우 "회원가입이 완료되었습니다." 창 띄우기

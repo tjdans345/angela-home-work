@@ -69,6 +69,15 @@
               placeholder="이메일을 입력해주세요."
             />
           </li>
+
+          <li>
+            <label for="reg_category">회원유형<strong>*</strong></label>
+            <select name="" id="category" class="reg_select required">
+              <option value="">선택</option>
+              <option value="general">일반</option>
+              <option value="teacher">강사</option>
+            </select>
+          </li>
         </ul>
       </div>
 
@@ -79,8 +88,7 @@
           value="확인"
           id="btn_confirm"
           class="btn-confirm"
-          onclick="check_reg()"
-        >
+          onclick="check_reg()">
           확인
         </button>
       </div>
